@@ -6,19 +6,12 @@ const hero = document.querySelector('.hero')
 const canvas = document.querySelector('[data-webgl]')
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
-root.classList.add('js', 'is-animating')
-
-function finishEntrance() {
-  root.classList.remove('is-animating')
-}
-
 function initEntrance() {
   const media = gsap.matchMedia()
 
   media.add('(prefers-reduced-motion: no-preference)', () => {
     const timeline = gsap.timeline({
       defaults: { overwrite: 'auto' },
-      onComplete: finishEntrance,
     })
 
     gsap.set('[data-primary-cta]', { opacity: 1, x: 0, y: 0 })
@@ -118,10 +111,8 @@ function initEntrance() {
 
   media.add('(prefers-reduced-motion: reduce)', () => {
     gsap.set('[data-reveal], [data-title-line], [data-project-frame]', { clearProps: 'all' })
-    finishEntrance()
   })
 
-  window.setTimeout(finishEntrance, 2400)
   return () => media.revert()
 }
 

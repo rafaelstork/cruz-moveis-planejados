@@ -559,20 +559,6 @@ a:focus-visible {
   height: auto;
 }
 
-.js.is-animating [data-reveal="brand"],
-.js.is-animating [data-reveal="nav"],
-.js.is-animating [data-reveal="eyebrow"],
-.js.is-animating [data-reveal="support"],
-.js.is-animating [data-reveal="caption"],
-.js.is-animating [data-reveal="facts"],
-.js.is-animating [data-reveal="base"] {
-  opacity: 0;
-}
-
-.js.is-animating [data-primary-cta] {
-  opacity: 1;
-}
-
 @media (max-width: 1100px) {
   .hero__composition {
     grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
